@@ -22,7 +22,7 @@ class AccountController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return Inertia::render('Auth/User/Account', [
+        return Inertia::render('Auth/User/Account/Show', [
             'user' => $request->user(),
             'sessions' => $this->sessions($request)->all(),
             'confirmsTwoFactorAuthentication' => Features::optionEnabled(Features::twoFactorAuthentication(), 'confirm'),
